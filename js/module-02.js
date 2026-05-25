@@ -211,3 +211,176 @@
 // }
 
 // console.log(createFileName(' order ', 'txt'));
+
+//! Напиши функцію season(month), яка приймає номер місяця (1-12) і повертає пору року українською.
+
+// function season(month) {
+//   if (month === 12 || month === 1 || month === 2) {
+//     return 'зима';
+//   } else if (month >= 3 && month <= 5) {
+//     return 'весна';
+//   } else if (month >= 6 && month <= 8) {
+//     return 'літо';
+//   } else if (month >= 9 && month <= 11) {
+//     return 'осінь';
+//   } else {
+//     return 'Некоректний номер місяця';
+//   }
+// }
+
+//! Напиши функцію ticketPrice(age), яка повертає ціну квитка: діти до 6 — безкоштовно, від 6 до 18 — 50 грн, від 18 до 60 — 100 грн, від 60 — 70 грн.
+// function ticketPrice(age) {
+//     if (age < 6) {
+//         return "Безкоштовно";
+//     } else if (age < 18) {
+//         return "50 грн";
+//     } else if (age < 60) {
+//         return '100 грн';
+//     } else {
+//         return '70 грн';
+//     }
+// }
+
+// console.log(ticketPrice (1));
+
+//! Напиши функцію formatGreeting(name, timeOfDay), яка повертає привітання залежно від часу доби: "morning" → "Добрий ранок, [name]!", "afternoon" → "Добрий день, [name]!", "evening" → "Добрий вечір, [name]!", інакше → "Привіт, [name]!".
+
+// function formatGreeting(name, timeOfDay) {
+//   if (timeOfDay === 'morning') {
+//     return `Добрий ранок, ${name}!`;
+//   } else if (timeOfDay === 'afternoon') {
+//     return `Добрий день, ${name}!`;
+//   } else if (timeOfDay === 'evening') {
+//     return `Добрий вечір, ${name}!`;
+//   } else {
+//     return `Привіт, ${name}!`;
+//   }
+// }
+
+//! Напиши функцію calculator(a, b, operator), яка виконує операцію +, -, * або / над двома числами. Якщо оператор невідомий — повертає "Невідомий оператор". Якщо ділення на нуль — повертає "Ділення на нуль".
+
+// function calculator(a, b, operator) {
+//   if (operator === '+') {
+//     return a + b;
+//   } else if (operator === '-') {
+//     return a - b;
+//   } else if (operator === '*') {
+//     return a * b;
+//   } else if (operator === '/') {
+//     if (b === 0) {
+//       return 'Ділення на нуль';
+//     }
+//     return a / b;
+//   } else {
+//     return 'Невідомий оператор';
+//   }
+// }
+
+//! Напиши функцію gameResult(playerHP, enemyHP, playerMana, hasKey, doorLocked), яка повертає результат гри: "Dead" якщо hp гравця 0 або менше, "Victory" якщо hp ворога 0 або менше І гравець живий, "Locked" якщо двері замкнені І немає ключа І обидва живі, "Low Mana" якщо мана менше 10 І обидва живі І двері не замкнені або є ключ, "Continue" в інших випадках.
+
+// function gameResult(playerHP, enemyHP, playerMana, hasKey, doorLocked) {
+//   if (playerHP <= 0) {
+//     return 'Dead';
+//   } else if (enemyHP <= 0) {
+//     return 'Victory';
+//   } else if (doorLocked && !hasKey) {
+//     return 'Locked';
+//   } else if (playerMana < 10 && (!doorLocked || hasKey)) {
+//     return 'Low Mana';
+//   } else {
+//     return 'Continue';
+//   }
+// }
+
+//! Напиши функцію trafficLight(color, isEmergency, isPedestrianCrossing, timeOfDay), яка повертає дію водія: якщо є екстрена служба — "Pull over", якщо зелений І немає пішоходів — "Go", якщо жовтий АБО є пішоходи — "Slow down", якщо червоний — "Stop", якщо нічний час (22:00-06:00) І червоний І немає пішоходів — "Stop and check", інакше — "Unknown".
+
+// function trafficLight(color, isEmergency, isPedestrianCrossing, timeOfDay) {
+//   const isNight = timeOfDay >= 22 || timeOfDay < 6;
+
+//   if (isEmergency) {
+//     return 'Pull over';
+//   } else if (color === 'red' && isNight && !isPedestrianCrossing) {
+//     return 'Stop and check';
+//   } else if (color === 'green' && !isPedestrianCrossing) {
+//     return 'Go';
+//   } else if (color === 'yellow' || isPedestrianCrossing) {
+//     return 'Slow down';
+//   } else if (color === 'red') {
+//     return 'Stop';
+//   } else {
+//     return 'Unknown';
+//   }
+// }
+
+//! Функція calculateTotal(number) приймає ціле число(параметр number).Доповни код функції так, щоб вона повертала суму всіх цілих чисел від одиниці до цього числа включно.Наприклад, якщо number дорівнює 3, то сума - це 1 + 2 + 3, тобто 6.
+
+// function calculateTotal(number) {
+//   let total = 0;
+//   let i = 1;
+
+//   while (i <= number) {
+//     total += i;
+//     i += 1;
+//   }
+
+//   return total;
+// }
+
+// console.log(calculateTotal(24));
+
+//! Функція calculateTotal(number) приймає ціле число (параметр number) Використовуючи цикл for, доповни код функції так, щоб вона повертала суму всіх цілих чисел від одиниці до цього числа включно. Наприклад, якщо number дорівнює 3, то сума - це 1 + 2 + 3, тобто 6.
+
+// function calculateTotal(number) {
+//   let sum = 0;
+
+//     for (let i = 0; i <= number; i += 1) {
+//     sum += i;
+//   }
+
+//   return sum;
+// }
+
+//! Функція calculateEvenTotal(number) приймає ціле число (параметр number). Доповни код функції так, щоб вона повертала суму всіх парних цілих чисел від одиниці до цього числа включно. Парні числа — це ті, що можна поділити на 2 без остачі (як це зробити розглядалося у темі Арифметичні операції у модулі 1). Наприклад, якщо number дорівнює 6, то сума - це 2 + 4 + 6, тобто 12.
+
+// function calculateEvenTotal(number) {
+//   let sum = 0;
+
+//   for (let i = 1; i <= number; i++) {
+//     if (i % 2 === 0) {
+//       sum += i;
+//     }
+//   }
+
+//   return sum;
+// }
+
+//! Доповни код таким чином, щоб у змінну number записувалося перше число у проміжку від start до end, яке ділиться на 5 без остачі.
+
+// const start = 6;
+// const end = 17;
+// let number;
+
+// for (let i = start; i <= end; i++) {
+//   if (i % 5 === 0) {
+//     number = i;
+//     break;
+//   }
+// }
+
+// console.log(number); // 10
+
+//! Функція findNumber(start, end, divisor) приймає три параметра, які є цілими числами.
+
+//! Доповни код функції таким чином, щоб вона:
+
+//! повертала перше число у діапазоні від start до end включно, яке ділиться на divisor без остачі
+//! не використовуй оператор break
+
+// function findNumber(start, end, divisor) {
+//   for (let i = start; i <= end; i++) {
+//     if (i % divisor === 0) {
+//       return i;
+//     }
+//   }
+// }
+// console.log(findNumber(8, 17, 3));
