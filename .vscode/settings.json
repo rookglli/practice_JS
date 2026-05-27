@@ -1,0 +1,6 @@
+{
+  "intellisenseTranslator.ollamaEndpoint": "http://localhost:11434/api/generate",
+  "intellisenseTranslator.ollamaModel": "ali6parmak/hy-mt1.5:1.8b",
+  "intellisenseTranslator.targetLanguage": "ru",
+  "commentTranslate.targetLanguage": "ru"
+}

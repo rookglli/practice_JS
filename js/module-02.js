@@ -384,3 +384,100 @@
 //   }
 // }
 // console.log(findNumber(8, 17, 3));
+
+//! Напишіть функцію getNumbers(min, max), що приймає 2 параметри -
+//! Напишіть цикл всередині функції, який виводить у консоль
+//! всі числа від max до min за спаданням.
+//! Окрім цього, підрахуйте суму всіх парних чисел в цьому циклі
+//! і поверніть її з функції.
+
+// const min = 1;
+// const max = 5;
+// function getNumbers(min, max) {
+//   let sum = 0;
+//   for (let i = max; i >= min; i--) {
+//     console.log(i);
+//     if (i % 2 === 0) {
+//       sum += i;
+//     }
+//   }
+//   return sum;
+// }
+// console.log(getNumbers(min, max));
+
+//! Напиши функцію calculateAverage(a, b), яка приймає два числа і повертає їхнє середнє арифметичне. Додай перевірку: якщо хоча б один аргумент не є числом, повертай 'Помилка: введіть числа'.
+
+// function calculateAverage(a, b) {
+//   if (typeof a !== 'number' || typeof b !== 'number') {
+//     return 'Помилка: введіть числа';
+//   }
+
+//   return (a + b) / 2;
+// }
+
+//! Напиши функцію countDown(n), яка повертає рядок з відліком від n до 0 через пробіл. Наприклад: countDown(5) → "5 4 3 2 1 0".
+
+// function countDown(n) {
+//   let result = '';
+//   for (let i = n; i >= 0; i--) {
+//     result += i;
+
+//     if (i !== 0) {
+//       result += ' ';
+//     }
+//   }
+
+//   return result;
+// }
+
+//! Напиши функцію fizzbuzz(n), яка повертає рядок з числами від 1 до n де замість кратних 3 стоїть "Fizz", кратних 5 — "Buzz", кратних обом — "FizzBuzz".
+
+// function fizzbuzz(n) {
+//   let result = '';
+
+//   for (let i = 1; i <= n; i++) {
+//     if (i % 3 === 0 && i % 5 === 0) {
+//       result += 'FizzBuzz';
+//     } else if (i % 3 === 0) {
+//       result += 'Fizz';
+//     } else if (i % 5 === 0) {
+//       result += 'Buzz';
+//     } else {
+//       result += i;
+//     }
+
+//     if (i !== n) {
+//       result += ' ';
+//     }
+//   }
+
+//   return result;
+// }
+
+// //* Напиши функцію longestWord(sentence), яка повертає найдовше слово в реченні.
+
+// console.log(
+//   longestWord('яка повертає найдовше слово в реченніr4r543543543345')
+// );
+
+// function longestWord(sentence) {
+//   let longestWord = '';
+//   let currentWord = '';
+
+//   for (let i = 0; i < sentence.length; i++) {
+//     if (sentence[i] !== ' ') {
+//       currentWord += sentence[i];
+//     } else {
+//       if (currentWord.length >= longestWord.length) {
+//         longestWord = currentWord;
+//       }
+//       currentWord = '';
+//     }
+//   }
+
+//   if (currentWord.length >= longestWord.length) {
+//     longestWord = currentWord;
+//   }
+
+//   return longestWord;
+// }
