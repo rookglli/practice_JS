@@ -1,6 +1,6 @@
 //! Функція getLastElementMeta(array) приймає один параметр array - масив довільних значень. Доповни код функції таким чином, щоб вона повертала новий масив з двох елементів:
 
-const { forwardRef } = require("react");
+// const { forwardRef } = require("react");
 
 // перший елемент - це індекс останнього елементу у масиві array
 // другий елемент - це значення останнього елементу у масиві array
@@ -172,3 +172,111 @@ const { forwardRef } = require("react");
 //   };
 //   return sum;
 // }
+
+//! Дано речення, порахувати кількість слів
+
+// function countWords(sentence) {
+//   return sentence.split(/\s+/).length;
+// }
+
+// console.log(countWords('Дано речення, порахувати кількість слів'));
+
+//! Напиши функцію unique(arr), яка повертає новий масив без дублікатів. Наприклад: [1, 2, 2, 3, 3, 3] → [1, 2, 3].
+
+// function unique(arr) {
+//   const result = [];
+
+//   for (let i = 0; i < arr.length; i += 1) {
+//     if (!result.includes(arr[i])) {
+//       result.push(arr[i]);
+//     }
+//   }
+
+//   return result;
+// }
+
+//! // Напишіть функцію checkLogin(array), яка:
+//! Приймає масив логінів як аргумент.
+//! Запитує ім'я користувача через prompt.
+//! Перевіряє, чи є введене ім'я у переданому масиві.
+//! Якщо ім'я є в масиві – виводить повідомлення через alert: "Welcome, <name>!"
+//! Якщо ім'я відсутнє – виводить повідомлення: "User not found".
+
+// const logins = ['Peter', 'John', 'Igor', 'Sasha'];
+
+// function checkLogin(array) {
+//   const userName = prompt("Введіть ім'я");
+
+//   if (array.includes(userName)) {
+//     alert(`Welcome, ${userName}!`);
+//   } else {
+//     alert('User not found');
+//   }
+// }
+// checkLogin(logins);
+
+//! Напишіть функцію, яка сумуватиме сусідні числа
+//! і пушитиме їх в новий масив.
+
+//! const someArr = [22, 11, 34, 5, 12, 13, 14, 15];
+
+//! уточнення: складати необхідно перше число з другим, потім друге - з третім,
+//! третє - з четвертим і так до кінця.
+//! В результаті функція має повертати масив [33, 45, 39, 17, 25, 27, 29].
+
+// function sumNeighbors(array) {
+//   const newArray = [];
+
+//   for (let i = 0; i < array.length - 1; i += 1) {
+//     newArray.push(array[i] + array[i + 1]);
+//   }
+
+//   return newArray;
+// }
+
+// const someArr = [22, 11, 34, 5, 12, 13, 14, 15];
+
+//! Функція createReversedArray() може приймати довільну кількість аргументів. Доповни код функції так, щоб вона повертала масив усіх аргументів, але в масиві вони повинні йти у зворотному порядку. Тобто, при виклику createReversedArray(1, 2, 3), функція має повернути масив [3, 2, 1]. Використовуй цикл або метод масиву toReversed(), який застосовується до масиву і результатом роботи повертає новий масив з елементами у зворотньому порядку.
+
+// function createReversedArray() {
+//     const args = Array.from(arguments).toReversed();
+//     return args;
+// }
+
+// console.log(createReversedArray(12, 85, 37, 4));
+
+//! Напишіть функцію caclculateAverage(),
+//! яка приймає довільну кількість
+//! аргументів і повертає їхнє середнє значення.
+//! Додайте перевірку, що аргументи - це числа.
+
+// function calculateAverage() {
+//   let total = 0;
+//   let count = 0;
+
+//   for (const arg of arguments) {
+//     if (typeof arg === 'number') {
+//       total += arg;
+//       count += 1;
+//     }
+//   }
+
+//   if (count === 0) {
+//     return 'Немає чисел';
+//   }
+
+//   return total / count;
+// }
+
+//! Функція calculateTax(amount, taxRate) оголошує два параметри:
+
+//! amount - число, сума від якої потрібно обчислити податок. Обов'язковий параметр.
+//! taxRate - число, податкова ставка. Необов'язковий параметр. За замовчуванням його значення має бути 0.2.
+//! Доповни код функції так, щоб вона повертала суму податку - результат множення суми на податкову ставку.
+
+// function calculateTax(amount, taxRate = 0.2) {
+//   return amount * taxRate;
+// }
+
+// console.log(calculateTax(200, 0.3));
+
