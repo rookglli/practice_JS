@@ -280,3 +280,30 @@
 
 // console.log(calculateTax(200, 0.3));
 
+//! Напиши функцію intersection(arr1, arr2), яка повертає масив елементів які є в обох масивах. Наприклад: [1, 2, 3] і [2, 3, 4] → [2, 3].
+
+// function intersection(arr1, arr2) {
+//     const commonElements = [];
+//     for (const element of arr2) {
+//         if (arr1.includes(element)) {
+//             commonElements.push(element);
+//         }
+//     }
+//     return commonElements;
+// }
+
+// console.log(intersection([1, 2, 3, 4, 7, 9], [2, 3, 4]));
+
+//! Напиши функцію getOdd(arr), яка повертає новий масив тільки з непарними числами.
+
+// function getOdd(numbers) {
+//   const oddNumbers = [];
+//   for (const number of numbers) {
+//     if (number % 2 === 1) {
+//       oddNumbers.push(number);
+//     }
+//   }
+//   return oddNumbers;
+// }
+
+// console.log(getOdd([1, 2, 3, 4, 7, 9]));
