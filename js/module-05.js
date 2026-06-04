@@ -197,24 +197,394 @@
 
 //! Масив books містить колекцію об'єктів книг, кожен з яких містить властивість genres, значенням якої є масив жанрів. Використовуючи метод flatMap(), зроби так, щоб у змінній genres вийшов масив жанрів усіх книг (властивість genres) з масиву books.
 
-const books = [
-  {
-    title: 'The Last Kingdom',
-    author: 'Bernard Cornwell',
-    genres: ['adventure', 'history'],
-  },
-  {
-    title: 'Beside Still Waters',
-    author: 'Robert Sheckley',
-    genres: ['fiction'],
-  },
-  {
-    title: 'Redder Than Blood',
-    author: 'Tanith Lee',
-    genres: ['horror', 'mysticism'],
-  },
-];
+// const books = [
+//   {
+//     title: 'The Last Kingdom',
+//     author: 'Bernard Cornwell',
+//     genres: ['adventure', 'history'],
+//   },
+//   {
+//     title: 'Beside Still Waters',
+//     author: 'Robert Sheckley',
+//     genres: ['fiction'],
+//   },
+//   {
+//     title: 'Redder Than Blood',
+//     author: 'Tanith Lee',
+//     genres: ['horror', 'mysticism'],
+//   },
+// ];
 
-const genres = books.flatMap(book => book.genres);
+// const genres = books.flatMap(book => book.genres);
 
-console.log(genres);
+// console.log(genres);
+
+//! Доповни код так, щоб у змінній evenNumbers був масив парних чисел із масиву numbers, а у змінній oddNumbers — масив непарних. Обов'язково використовуй метод filter().
+
+// const numbers = [17, 24, 82, 61, 36, 18, 47, 52, 73];
+
+// const evenNumbers = numbers.filter(namber => namber % 2 === 0);
+// const oddNumbers = numbers.filter(namber => namber % 2 == 1);
+
+// console.log(evenNumbers);
+// console.log(oddNumbers);
+
+//! Масив books містить колекцію об'єктів книг, кожен з яких містить властивості title, author, rating. Використовуючи метод filter(), доповни код таким чином, щоб:
+
+//! У змінній topRatedBooks утворився масив книг, рейтинг яких (властивість rating) більший за або дорівнює значенню змінної MIN_RATING.
+//! У змінній booksByAuthor утворився масив книг, написаних автором з ім'ям (властивість author), яке збігається зі значенням у змінній AUTHOR.
+
+// const books = [
+//   {
+//     title: 'The Last Kingdom',
+//     author: 'Bernard Cornwell',
+//     rating: 8.38,
+//   },
+//   {
+//     title: 'Beside Still Waters',
+//     author: 'Robert Sheckley',
+//     rating: 8.51,
+//   },
+//   {
+//     title: 'The Tell-Tale Heart',
+//     author: 'Edgar Allan Poe',
+//     rating: 7.75,
+//   },
+//   { title: 'Redder Than Blood', author: 'Tanith Lee', rating: 7.94 },
+//   { title: 'Enemy of God', author: 'Bernard Cornwell', rating: 8.67 },
+// ];
+
+// const MIN_RATING = 8;
+// const AUTHOR = 'Bernard Cornwell';
+
+// const topRatedBooks = books.filter(book => book.rating >= MIN_RATING);
+// const booksByAuthor = books.filter(book => book.author === AUTHOR);
+
+//! Напиши функцію groupBy(arr, key), яка групує масив обʼєктів за значенням вказаного ключа і повертає обʼєкт. Наприклад: groupBy(users, "city") → { Kyiv: [...], Lviv: [...] }.
+//! const users = [
+//!   { id: 1, firstName: "Іван", lastName: "Петренко", age: 25, city: "Kyiv", salary: 45000 },
+//!   { id: 2, firstName: "Марія", lastName: "Коваленко", age: 17, city: "Lviv", salary: 32000 },
+//!   { id: 3, firstName: "Олег", lastName: "Сидоренко", age: 32, city: "Kyiv", salary: 67000 },
+//!   { id: 4, firstName: "Анна", lastName: "Бондаренко", age: 15, city: "Odesa", salary: 28000 },
+//!   { id: 5, firstName: "Дмитро", lastName: "Мельник", age: 28, city: "Lviv", salary: 51000 },
+//!   { id: 6, firstName: "Юлія", lastName: "Шевченко", age: 22, city: "Kyiv", salary: 39000 },
+//!   { id: 7, firstName: "Максим", lastName: "Кравченко", age: 16, city: "Odesa", salary: 25000 },
+//!   { id: 8, firstName: "Ольга", lastName: "Лисенко", age: 35, city: "Lviv", salary: 72000 },
+//! ];
+
+// function groupBy(arr, key) {
+//   const result = {};
+
+//   arr.forEach(item => {
+//     const groupName = item[key];
+
+//     if (!result[groupName]) {
+//       result[groupName] = [];
+//     }
+
+//     result[groupName].push(item);
+//   });
+
+//   return result;
+// }
+
+//! Напиши функцію mapAndFilter(arr, mapFn, filterFn), яка спочатку застосовує mapFn до кожного елемента а потім фільтрує результат через filterFn.
+
+// const books = [
+//   { id: 1, title: "Кобзар", author: "Шевченко", genre: "Poetry", price: 250, pages: 320 },
+//   { id: 2, title: "Тіні забутих предків", author: "Коцюбинський", genre: "Novel", price: 180, pages: 156 },
+//   { id: 3, title: "1984", author: "Orwell", genre: "Dystopia", price: 320, pages: 328 },
+//   { id: 4, title: "Чистий код", author: "Martin", genre: "Tech", price: 850, pages: 431 },
+//   { id: 5, title: "Lesia Ukrainka", author: "Ukrainka", genre: "Poetry", price: 210, pages: 280 },
+//   { id: 6, title: "JavaScript", author: "Flanagan", genre: "Tech", price: 1200, pages: 706 },
+//   { id: 7, title: "Brave New World", author: "Huxley", genre: "Dystopia", price: 290, pages: 311 },
+//   { id: 8, title: "Місто", author: "Підмогильний", genre: "Novel", price: 195, pages: 248 },
+// ];
+
+// function mapAndFilter(arr, mapFn, filterFn) {
+//   const result = [];
+
+//   arr.forEach(item => {
+//     const mappedItem = mapFn(item);
+
+//     if (filterFn(mappedItem)) {
+//       result.push(mappedItem);
+//     }
+//   });
+
+//   return result;
+// }
+
+//! Доповни функцію getUsersWithEyeColor(users, color) таким чином, щоб вона повертала масив користувачів, у яких колір очей (властивість eyeColor) збігається зі значенням другого параметра color.
+
+//! Цей масив об'єктів ми будемо передавати в параметр users під час виклику функції із завдання.
+
+// [
+//   {
+//     name: 'Moore Hensley',
+//     email: 'moorehensley@indexia.com',
+//     eyeColor: 'blue',
+//     friends: ['Sharron Pace'],
+//     isActive: false,
+//     balance: 2811,
+//     gender: 'male',
+//   },
+//   {
+//     name: 'Sharlene Bush',
+//     email: 'sharlenebush@tubesys.com',
+//     eyeColor: 'blue',
+//     friends: ['Briana Decker', 'Sharron Pace'],
+//     isActive: true,
+//     balance: 3821,
+//     gender: 'female',
+//   },
+//   {
+//     name: 'Ross Vazquez',
+//     email: 'rossvazquez@xinware.com',
+//     eyeColor: 'green',
+//     friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+//     isActive: false,
+//     balance: 3793,
+//     gender: 'male',
+//   },
+//   {
+//     name: 'Elma Head',
+//     email: 'elmahead@omatom.com',
+//     eyeColor: 'green',
+//     friends: ['Goldie Gentry', 'Aisha Tran'],
+//     isActive: true,
+//     balance: 2278,
+//     gender: 'female',
+//   },
+//   {
+//     name: 'Carey Barr',
+//     email: 'careybarr@nurali.com',
+//     eyeColor: 'blue',
+//     friends: ['Jordan Sampson', 'Eddie Strong'],
+//     isActive: true,
+//     balance: 3951,
+//     gender: 'male',
+//   },
+//   {
+//     name: 'Blackburn Dotson',
+//     email: 'blackburndotson@furnigeer.com',
+//     eyeColor: 'brown',
+//     friends: ['Jacklyn Lucas', 'Linda Chapman'],
+//     isActive: false,
+//     balance: 1498,
+//     gender: 'male',
+//   },
+//   {
+//     name: 'Sheree Anthony',
+//     email: 'shereeanthony@kog.com',
+//     eyeColor: 'brown',
+//     friends: ['Goldie Gentry', 'Briana Decker'],
+//     isActive: true,
+//     balance: 2764,
+//     gender: 'female',
+//   },
+// ];
+
+// const getUsersWithEyeColor = (users, color) => {
+//   return users.filter(user => user.eyeColor === color);
+// };
+
+//! Доповни код функції getUsersWithAge(users, minAge, maxAge), щоб повернути масив користувачів, вік (збережений у властивості age) яких потрапляє у заданий діапазон від minAge до maxAge.
+
+//! Поради:
+
+//! Використай метод filter() для створення нового масиву, в якому зберігаються тільки елементи, які задовольняють певну умову.
+//! Використай оператори >= (більше або дорівнює) та <= (менше або дорівнює), щоб відфільтрувати користувачів, вік яких точно потрапляє у діапазон між мінімальним minAge та максимальним maxAge значеннями.
+
+// const getUsersWithAge = (users, minAge, maxAge) => {
+//   return users.filter((user) => user.age <= maxAge && user.age >= minAge);
+// };
+
+//! Масив books містить колекцію об'єктів книг, кожен з яких містить властивості title, author, rating.
+
+//! Використовуючи метод find(), доповни код таким чином, щоб:
+
+//! У змінній bookWithTitle утворився об'єкт книги, назва якої (властивість title) збігається зі значенням змінної BOOK_TITLE.
+//! У змінній bookByAuthor утворився об'єкт книги, автор якої (властивість author) збігається зі значенням змінної AUTHOR.
+
+// const books = [
+//   {
+//     title: 'The Last Kingdom',
+//     author: 'Bernard Cornwell',
+//     rating: 8.38,
+//   },
+//   {
+//     title: 'Beside Still Waters',
+//     author: 'Robert Sheckley',
+//     rating: 8.51,
+//   },
+//   {
+//     title: 'The Tell-Tale Heart',
+//     author: 'Edgar Allan Poe',
+//     rating: 7.75,
+//   },
+//   { title: 'Redder Than Blood', author: 'Tanith Lee', rating: 7.94 },
+// ];
+// const BOOK_TITLE = 'The Tell-Tale Heart';
+// const AUTHOR = 'Robert Sheckley';
+
+// const bookWithTitle = books.find((book) => book.title === BOOK_TITLE);
+// const bookByAuthor = books.find((book) => book.author === AUTHOR);
+
+//! Доповни функцію getUserWithEmail(users, email) таким чином, щоб вона повертала об'єкт користувача, пошта якого (властивість email) збігається зі значенням другого параметра email.
+
+// const getUserWithEmail = (users, email) => {
+//   return users.find((user) => user.email === email)
+// };
+
+// console.log(
+//   getUserWithEmail(
+//     [
+//       {
+//         name: 'Moore Hensley',
+//         email: 'moorehensley@indexia.com',
+//         eyeColor: 'blue',
+//         friends: ['Sharron Pace'],
+//         isActive: false,
+//         balance: 2811,
+//         gender: 'male',
+//       },
+//       {
+//         name: 'Sharlene Bush',
+//         email: 'sharlenebush@tubesys.com',
+//         eyeColor: 'blue',
+//         friends: ['Briana Decker', 'Sharron Pace'],
+//         isActive: true,
+//         balance: 3821,
+//         gender: 'female',
+//       },
+//       {
+//         name: 'Ross Vazquez',
+//         email: 'rossvazquez@xinware.com',
+//         eyeColor: 'green',
+//         friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+//         isActive: false,
+//         balance: 3793,
+//         gender: 'male',
+//       },
+//       {
+//         name: 'Elma Head',
+//         email: 'elmahead@omatom.com',
+//         eyeColor: 'green',
+//         friends: ['Goldie Gentry', 'Aisha Tran'],
+//         isActive: true,
+//         balance: 2278,
+//         gender: 'female',
+//       },
+//       {
+//         name: 'Carey Barr',
+//         email: 'careybarr@nurali.com',
+//         eyeColor: 'blue',
+//         friends: ['Jordan Sampson', 'Eddie Strong'],
+//         isActive: true,
+//         balance: 3951,
+//         gender: 'male',
+//       },
+//       {
+//         name: 'Blackburn Dotson',
+//         email: 'blackburndotson@furnigeer.com',
+//         eyeColor: 'brown',
+//         friends: ['Jacklyn Lucas', 'Linda Chapman'],
+//         isActive: false,
+//         balance: 1498,
+//         gender: 'male',
+//       },
+//       {
+//         name: 'Sheree Anthony',
+//         email: 'shereeanthony@kog.com',
+//         eyeColor: 'brown',
+//         friends: ['Goldie Gentry', 'Briana Decker'],
+//         isActive: true,
+//         balance: 2764,
+//         gender: 'female',
+//       },
+//     ],
+//     'blackburndotson@furnigeer.com'
+//   )
+// );
+
+// //! Доповни функцію isEveryUserActive(users) таким чином, щоб вона перевіряла, чи всі користувачі зараз активні (властивість isActive) і повертала true або false.
+
+// const isEveryUserActive = users => {
+//   return users.every(user => user.isActive === true);
+// };
+
+// console.log(
+//   isEveryUserActive([
+//     {
+//       name: 'Moore Hensley',
+//       email: 'moorehensley@indexia.com',
+//       eyeColor: 'blue',
+//       friends: ['Sharron Pace'],
+//       isActive: false,
+//       balance: 2811,
+//       gender: 'male',
+//     },
+//     {
+//       name: 'Sharlene Bush',
+//       email: 'sharlenebush@tubesys.com',
+//       eyeColor: 'blue',
+//       friends: ['Briana Decker', 'Sharron Pace'],
+//       isActive: true,
+//       balance: 3821,
+//       gender: 'female',
+//     },
+//     {
+//       name: 'Ross Vazquez',
+//       email: 'rossvazquez@xinware.com',
+//       eyeColor: 'green',
+//       friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+//       isActive: false,
+//       balance: 3793,
+//       gender: 'male',
+//     },
+//     {
+//       name: 'Elma Head',
+//       email: 'elmahead@omatom.com',
+//       eyeColor: 'green',
+//       friends: ['Goldie Gentry', 'Aisha Tran'],
+//       isActive: true,
+//       balance: 2278,
+//       gender: 'female',
+//     },
+//     {
+//       name: 'Carey Barr',
+//       email: 'careybarr@nurali.com',
+//       eyeColor: 'blue',
+//       friends: ['Jordan Sampson', 'Eddie Strong'],
+//       isActive: true,
+//       balance: 3951,
+//       gender: 'male',
+//     },
+//     {
+//       name: 'Blackburn Dotson',
+//       email: 'blackburndotson@furnigeer.com',
+//       eyeColor: 'brown',
+//       friends: ['Jacklyn Lucas', 'Linda Chapman'],
+//       isActive: false,
+//       balance: 1498,
+//       gender: 'male',
+//     },
+//     {
+//       name: 'Sheree Anthony',
+//       email: 'shereeanthony@kog.com',
+//       eyeColor: 'brown',
+//       friends: ['Goldie Gentry', 'Briana Decker'],
+//       isActive: true,
+//       balance: 2764,
+//       gender: 'female',
+//     },
+//   ])
+// );
+
+
+//! Доповни функцію isAnyUserActive(users) таким чином, щоб вона перевіряла наявність хоча б одного активного користувача (властивість isActive) і повертала true або false.
+
+const isAnyUserActive = users => {
+  return users.some(user => user.isActive === true);
+};
